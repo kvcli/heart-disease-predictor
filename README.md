@@ -3,7 +3,7 @@
 CardiaCheck AI is a professional, intuitive, and visually stunning web-based application designed for preliminary heart disease risk assessment. By leveraging advanced machine learning models, users can get an "easy check" of their cardiac health risk based on basic medical metrics.
 
 ## 🚀 Live Demo
-**Try the application here:** [CardiaCheck AI Demo](https://devthoughtsbyaziz.vercel.app/)
+**Try the application here:** [CardiaCheck AI Demo](https://heart-disease-predictor-ochre.vercel.app/)
 
 ---
 
