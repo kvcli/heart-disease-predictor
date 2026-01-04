@@ -9,6 +9,7 @@ interface InfoSectionsProps {
 
 const InfoSections: React.FC<InfoSectionsProps> = ({ t }) => {
   const features = Object.entries(t.sections.featureList);
+  const sel = t.sections.selection;
 
   return (
     <div className="space-y-16 py-12">
@@ -61,6 +62,61 @@ const InfoSections: React.FC<InfoSectionsProps> = ({ t }) => {
         <p className="text-slate-500 text-sm max-w-3xl">
           {t.sections.featuresBody}
         </p>
+      </section>
+
+      {/* New Selection Section */}
+      <section className="space-y-12 bg-slate-800/20 p-8 rounded-3xl border border-slate-700/30">
+        <div className="text-center space-y-4 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-white">{sel.title}</h2>
+          <p className="text-slate-400 leading-relaxed">{sel.conclusion}</p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="space-y-6">
+            <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-700">
+              <h3 className="text-lg font-bold text-red-500 mb-3">{sel.selectedModelTitle}</h3>
+              <p className="text-sm text-slate-300 mb-4">{sel.selectedModelBody}</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {[
+                  { k: 'Accuracy', v: '0.7899' },
+                  { k: 'Precision', v: '0.8133' },
+                  { k: 'Recall', v: '0.8026' },
+                  { k: 'F1-Score', v: '0.8079' },
+                  { k: 'ROC AUC', v: '0.8517' }
+                ].map(m => (
+                  <div key={m.k} className="p-2 rounded bg-slate-800 border border-slate-700 text-center">
+                    <div className="text-[10px] uppercase text-slate-500 font-bold">{m.k}</div>
+                    <div className="text-sm font-black text-white">{m.v}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800">
+              <h3 className="text-lg font-bold text-slate-400 mb-3">{sel.comparisonTitle}</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">{sel.comparisonBody}</p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold text-white mb-4">{sel.rationaleTitle}</h3>
+            <div className="grid gap-4">
+              {Object.entries(sel.rationalePoints).map(([key, point]) => (
+                <div key={key} className="flex gap-4 p-4 rounded-xl bg-slate-800/40 border border-slate-700/50">
+                  <div className="bg-red-500/10 p-2 rounded-lg h-fit">
+                    <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-100 text-sm">{point.title}</h4>
+                    <p className="text-xs text-slate-400 leading-relaxed">{point.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="space-y-8">

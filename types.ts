@@ -48,6 +48,14 @@ export interface TranslationSchema {
       cp: Record<string, string>;
       restecg: Record<string, string>;
     };
+    tooltips: {
+      cp: string;
+      trestbps: string;
+      chol: string;
+      fbs: string;
+      exang: string;
+      restecg: string;
+    };
   };
   results: {
     heading: string;
@@ -73,6 +81,21 @@ export interface TranslationSchema {
     chart: {
       value: string;
       features: Record<string, string>;
+    };
+    selection: {
+      title: string;
+      selectedModelTitle: string;
+      selectedModelBody: string;
+      comparisonTitle: string;
+      comparisonBody: string;
+      rationaleTitle: string;
+      rationalePoints: {
+        userCentric: { title: string; body: string };
+        balanced: { title: string; body: string };
+        interpretable: { title: string; body: string };
+        efficient: { title: string; body: string };
+      };
+      conclusion: string;
     };
   };
   footer: {

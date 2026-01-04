@@ -30,6 +30,14 @@ export const translations: Record<string, TranslationSchema> = {
           'st-t abnormality': 'ST-T Wave Abnormality',
           'lv hypertrophy': 'LV Hypertrophy'
         }
+      },
+      tooltips: {
+        cp: "Describes the nature of pain felt in the chest. Can be determined by self-observation or clinical interview.",
+        trestbps: "The pressure of circulating blood on the walls of blood vessels. Measured using a standard blood pressure cuff.",
+        chol: "A waxy substance found in your blood. Obtained via a standard blood lipid panel test.",
+        fbs: "Blood sugar level after at least 8 hours of fasting. Measured using a glucometer or blood test.",
+        exang: "Chest pain triggered by physical activity. Reported based on personal experience during exercise.",
+        restecg: "Electrical activity of the heart while at rest. Obtained through an Electrocardiogram test at a clinic."
       }
     },
     results: {
@@ -73,6 +81,21 @@ export const translations: Record<string, TranslationSchema> = {
           chol: "Cholesterol",
           fbs: "Sugar"
         }
+      },
+      selection: {
+        title: "Model Selection & Performance",
+        selectedModelTitle: "Selected Model: Tuned Logistic Regression",
+        selectedModelBody: "We utilize a Tuned Logistic Regression model trained on 8 user-inputtable features. This model achieves 0.7899 accuracy and 0.8517 ROC AUC, providing a robust balance of performance and accessibility.",
+        comparisonTitle: "Comparison vs. Neural Network",
+        comparisonBody: "While complex Neural Networks achieve slightly higher ROC AUC (0.8788), they require invasive medical data (like thalch, oldpeak) not readily available to general users.",
+        rationaleTitle: "Why We Chose Logistic Regression",
+        rationalePoints: {
+          userCentric: { title: "User-Centric Design", body: "Focuses on 'easy checks' using data accessible to everyone without specialist tests." },
+          balanced: { title: "Balanced Performance", body: "An ROC AUC of 0.8517 provides highly reliable preliminary screening power." },
+          interpretable: { title: "High Interpretability", body: "Unlike 'black-box' AI, Logistic Regression clearly shows how each metric impacts your risk." },
+          efficient: { title: "Computational Efficiency", body: "Ensures near-instant results and low environmental footprint." }
+        },
+        conclusion: "This selection ensures CardiaCheck remains a practical, trustworthy, and accessible tool for a broad audience."
       }
     },
     footer: {
@@ -112,6 +135,14 @@ export const translations: Record<string, TranslationSchema> = {
           'st-t abnormality': 'شذوذ في موجة ST-T',
           'lv hypertrophy': 'تضخم البطين الأيسر'
         }
+      },
+      tooltips: {
+        cp: "يصف طبيعة الألم في الصدر. يتم تحديده من خلال الملاحظة الذاتية أو المقابلة السريرية.",
+        trestbps: "ضغط الدم المتداول على جدران الأوعية الدموية. يتم قياسه باستخدام جهاز قياس ضغط الدم القياسي.",
+        chol: "مادة شمعية توجد في الدم. يتم قياسها من خلال تحليل دم شامل.",
+        fbs: "مستوى سكر الدم بعد 8 ساعات على الأقل من الصيام. يتم قياسه بجهاز قياس السكر أو فحص دم.",
+        exang: "ألم في الصدر ناتج عن النشاط البدني. يتم الإبلاغ عنه بناءً على التجربة الشخصية أثناء التمرين.",
+        restecg: "النشاط الكهربائي للقلب أثناء الراحة. يتم الحصول عليه من خلال اختبار تخطيط القلب في العيادة."
       }
     },
     results: {
@@ -155,6 +186,21 @@ export const translations: Record<string, TranslationSchema> = {
           chol: "الكوليسترول",
           fbs: "السكر"
         }
+      },
+      selection: {
+        title: "اختيار النموذج والأداء",
+        selectedModelTitle: "النموذج المختار: الانحدار اللوجستي المحسن",
+        selectedModelBody: "نعتمد نموذج الانحدار اللوجستي المدرب على 8 سمات. يحقق دقة 0.7899 ومساحة تحت منحنى ROC قدرها 0.8517، مما يوفر توازناً بين الأداء وسهولة الوصول.",
+        comparisonTitle: "مقارنة مع الشبكات العصبية",
+        comparisonBody: "بينما تحقق الشبكات العصبية أداءً أعلى قليلاً (0.8788)، فإنها تتطلب بيانات طبية معقدة غير متاحة للمستخدم العادي.",
+        rationaleTitle: "لماذا اخترنا الانحدار اللوجستي؟",
+        rationalePoints: {
+          userCentric: { title: "تصميم يركز على المستخدم", body: "يركز على 'الفحوصات السهلة' باستخدام بيانات متاحة للجميع بدون فحوصات متخصصة." },
+          balanced: { title: "أداء متوازن", body: "قيمة ROC AUC 0.8517 توفر قوة فحص أولي موثوقة للغاية." },
+          interpretable: { title: "قابلية تفسير عالية", body: "على عكس الذكاء الاصطناعي 'الصندوق الأسود'، يوضح هذا النموذج بوضوح تأثير كل قياس." },
+          efficient: { title: "كفاءة حسابية", body: "يضمن نتائج فورية واستهلاكاً منخفضاً للموارد." }
+        },
+        conclusion: "يضمن هذا الاختيار بقاء CardiaCheck أداة عملية وموثوقة لجمهور عريض."
       }
     },
     footer: {
@@ -194,6 +240,14 @@ export const translations: Record<string, TranslationSchema> = {
           'st-t abnormality': 'ST-T Wellen-Anomalie',
           'lv hypertrophy': 'LV Hypertrophie'
         }
+      },
+      tooltips: {
+        cp: "Beschreibt die Art der Schmerzen in der Brust. Wird durch Selbstbeobachtung oder klinisches Interview bestimmt.",
+        trestbps: "Der Druck des zirkulierenden Blutes auf die Gefäßwände. Gemessen mit einer Standard-Blutdruckmanschette.",
+        chol: "Eine wachsartige Substanz im Blut. Gemessen durch eine Standard-Blutuntersuchung.",
+        fbs: "Blutzuckerspiegel nach mindestens 8 Stunden Fasten. Gemessen mit einem Blutzuckermessgerät oder Labortest.",
+        exang: "Brustschmerzen, die durch körperliche Aktivität ausgelöst werden. Basierend auf persönlicher Erfahrung.",
+        restecg: "Elektrische Aktivität des Herzens im Ruhezustand. Wird durch ein Elektrokardiogramm in einer Klinik durchgeführt."
       }
     },
     results: {
@@ -237,6 +291,21 @@ export const translations: Record<string, TranslationSchema> = {
           chol: "Cholesterin",
           fbs: "Blutzucker"
         }
+      },
+      selection: {
+        title: "Modellauswahl & Leistung",
+        selectedModelTitle: "Gewähltes Modell: Tuned Logistic Regression",
+        selectedModelBody: "Wir verwenden ein optimiertes logistisches Regressionsmodell. Mit einer Genauigkeit von 0,7899 und einem ROC AUC von 0,8517 bietet es ein optimales Gleichgewicht zwischen Präzision und Benutzerfreundlichkeit.",
+        comparisonTitle: "Vergleich mit Neuronalen Netzen",
+        comparisonBody: "Obwohl neuronale Netze einen etwas höheren ROC AUC (0,8788) erreichen, erfordern sie invasive Daten, die den meisten Nutzern nicht zur Verfügung stehen.",
+        rationaleTitle: "Warum logistische Regression?",
+        rationalePoints: {
+          userCentric: { title: "Nutzerzentriertes Design", body: "Konzentriert sich auf einfache Checks mit allgemein zugänglichen Daten." },
+          balanced: { title: "Ausgewogene Leistung", body: "Ein ROC AUC von 0,8517 bietet eine hochzuverlässige Erstbewertung." },
+          interpretable: { title: "Hohe Interpretierbarkeit", body: "Im Gegensatz zu 'Black-Box'-Systemen zeigt dieses Modell klar auf, wie jeder Wert das Risiko beeinflusst." },
+          efficient: { title: "Recheneffizienz", body: "Garantiert sofortige Ergebnisse und schont Ressourcen." }
+        },
+        conclusion: "Diese Wahl stellt sicher, dass CardiaCheck ein praktisches und vertrauenswürdiges Werkzeug für alle bleibt."
       }
     },
     footer: {

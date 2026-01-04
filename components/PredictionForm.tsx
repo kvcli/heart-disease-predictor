@@ -9,6 +9,20 @@ interface PredictionFormProps {
   locale: Locale;
 }
 
+const Tooltip: React.FC<{ content: string }> = ({ content }) => {
+  return (
+    <div className="group relative inline-block ml-1.5 align-middle">
+      <svg className="w-4 h-4 text-slate-500 hover:text-red-500 transition-colors cursor-help" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 p-3 bg-slate-900 border border-slate-700 rounded-lg shadow-2xl text-[11px] leading-relaxed text-slate-300 font-normal opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-[100] text-center">
+        {content}
+        <div className="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-slate-900"></div>
+      </div>
+    </div>
+  );
+};
+
 const PredictionForm: React.FC<PredictionFormProps> = ({ onPredict, isLoading, t, locale }) => {
   const [formData, setFormData] = useState<PredictionInput>({
     age: 50,
@@ -31,7 +45,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ onPredict, isLoading, t
   };
 
   const inputClass = "w-full px-4 py-2.5 rounded-xl border border-slate-700 bg-slate-800 focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition-all outline-none text-white";
-  const labelClass = "block text-sm font-semibold text-slate-300 mb-1.5";
+  const labelClass = "flex items-center text-sm font-semibold text-slate-300 mb-1.5";
 
   return (
     <form onSubmit={handleSubmit} className="bg-slate-800/50 backdrop-blur-md p-6 md:p-8 rounded-2xl shadow-xl space-y-6 border border-slate-700/50">
@@ -68,7 +82,10 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ onPredict, isLoading, t
         </div>
 
         <div>
-          <label className={labelClass}>{t.form.chestPain}</label>
+          <label className={labelClass}>
+            {t.form.chestPain}
+            <Tooltip content={t.form.tooltips.cp} />
+          </label>
           <select 
             value={formData.cp}
             onChange={(e) => handleChange('cp', e.target.value)}
@@ -81,7 +98,10 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ onPredict, isLoading, t
         </div>
 
         <div>
-          <label className={labelClass}>{t.form.bloodPressure}</label>
+          <label className={labelClass}>
+            {t.form.bloodPressure}
+            <Tooltip content={t.form.tooltips.trestbps} />
+          </label>
           <input 
             type="number" 
             value={formData.trestbps} 
@@ -91,7 +111,10 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ onPredict, isLoading, t
         </div>
 
         <div>
-          <label className={labelClass}>{t.form.cholesterol}</label>
+          <label className={labelClass}>
+            {t.form.cholesterol}
+            <Tooltip content={t.form.tooltips.chol} />
+          </label>
           <input 
             type="number" 
             value={formData.chol} 
@@ -101,7 +124,10 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ onPredict, isLoading, t
         </div>
 
         <div>
-          <label className={labelClass}>{t.form.restEcg}</label>
+          <label className={labelClass}>
+            {t.form.restEcg}
+            <Tooltip content={t.form.tooltips.restecg} />
+          </label>
           <select 
             value={formData.restecg}
             onChange={(e) => handleChange('restecg', e.target.value)}
@@ -122,9 +148,12 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ onPredict, isLoading, t
             onChange={(e) => handleChange('fbs', e.target.checked)}
             className="w-5 h-5 rounded border-slate-600 bg-slate-800 text-red-600 focus:ring-red-500"
           />
-          <span className="text-sm font-medium text-slate-400 group-hover:text-slate-200">
-            {t.form.fastingSugar}
-          </span>
+          <div className="flex items-center">
+            <span className="text-sm font-medium text-slate-400 group-hover:text-slate-200">
+              {t.form.fastingSugar}
+            </span>
+            <Tooltip content={t.form.tooltips.fbs} />
+          </div>
         </label>
 
         <label className="flex items-center gap-3 cursor-pointer group">
@@ -134,9 +163,12 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ onPredict, isLoading, t
             onChange={(e) => handleChange('exang', e.target.checked)}
             className="w-5 h-5 rounded border-slate-600 bg-slate-800 text-red-600 focus:ring-red-500"
           />
-          <span className="text-sm font-medium text-slate-400 group-hover:text-slate-200">
-            {t.form.exerciseAngina}
-          </span>
+          <div className="flex items-center">
+            <span className="text-sm font-medium text-slate-400 group-hover:text-slate-200">
+              {t.form.exerciseAngina}
+            </span>
+            <Tooltip content={t.form.tooltips.exang} />
+          </div>
         </label>
       </div>
 
