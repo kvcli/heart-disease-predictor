@@ -1,0 +1,8 @@
+scikit-learn==1.6.1
+pandas==2.0.3
+numpy==1.26.4
+fastapi==0.111.0
+uvicorn==0.29.0
+scipy==1.11.4
+matplotlib==3.7.1 # For plotting if any server-side diagnostics/visualizations are needed, otherwise optional.
+seaborn==0.12.2   # Same as matplotlib
